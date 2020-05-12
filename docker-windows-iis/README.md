@@ -1,4 +1,4 @@
-# Windows IIS
+# Windows IIS Docker Image
 
 Build and run the Docker image:
 
