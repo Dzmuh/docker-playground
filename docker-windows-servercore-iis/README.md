@@ -3,8 +3,8 @@
 Build and run the Docker image:
 
 ```bash
-docker build -t servercore-iis-site .
-docker run -it -p 8001:80 servercore-iis-site
+docker build -t servercore-iis .
+docker run -it -p 8001:80 --name my-running-servercore-iis servercore-iis
 ```
 
 ## Links
