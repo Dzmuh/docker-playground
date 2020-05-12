@@ -1,0 +1,11 @@
+version: '3.0'
+
+services:
+
+  iis:
+    image: mcr.microsoft.com/windows/servercore/iis
+    ports:
+      - 80:80
+    volumes:
+      - ./html:C:\inetpub\wwwroot
+    
