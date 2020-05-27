@@ -1,0 +1,24 @@
+version: '3.0'
+
+networks:
+  gitea:
+    external: false
+
+services:
+  server:
+    image: gitea/gitea:latest
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - LFS_START_SERVER=true
+      - DB_TYPE=sqlite3
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - ./repos:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3000:3000"
+      - "2221:22"
