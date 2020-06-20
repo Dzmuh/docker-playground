@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    environment:
+      - DEFAULT_HOST=127.0.0.1.xip.io
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  whoami1:
+    image: jwilder/whoami
+    environment:
+      - VIRTUAL_HOST=whoami.127.0.0.1.xip.io
+  
+  whoami2:
+    image: jwilder/whoami
+    environment:
+      - VIRTUAL_HOST=whoami2.127.0.0.1.xip.io
