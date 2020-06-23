@@ -12,7 +12,7 @@ services:
     environment:
       - DEFAULT_HOST=127.0.0.1.xip.io
     networks:
-      -proxy
+      - proxy
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
@@ -21,6 +21,6 @@ services:
     volumes:
       - ../www/default:/usr/share/nginx/html
     networks:
-      -proxy
+      - proxy
     environment:
       - VIRTUAL_HOST=127.0.0.1.xip.io

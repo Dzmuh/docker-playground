@@ -8,4 +8,9 @@ services:
     environment:
       - VIRTUAL_HOST=nginx1.127.0.0.1.xip.io
     networks:
-      - nginx-proxy-test1
+      - frontend
+
+networks:
+  frontend:
+    external:
+      name: nginx-proxy-adv_proxy
