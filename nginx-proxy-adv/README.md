@@ -7,6 +7,11 @@
 
 В общем, это конечно пипец, но он работает.
 
+## docker-compose down и сеть nginx-proxy-adv_proxy
+
+Если я выполню `docker-compose down` для `nginx-proxy-adv` не заглушив `nginx_service1`, то получим ошибку удаления сети и сеть `nginx-proxy-adv_proxy` останется висеть.
+Будет висеть и после заглушки `nginx_service1` и нужно будет удалить её вручную или выполнить `docker-compose down` для `nginx-proxy-adv`.
+
 ## Ссылки для посмотреть
 
 * [127.0.0.1.xip.io](http://127.0.0.1.xip.io/)
