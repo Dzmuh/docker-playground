@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  nginx2:
+    image: nginx
+    volumes:
+      - ../../www/html2:/usr/share/nginx/html
+    environment:
+      - VIRTUAL_HOST=nginx2.127.0.0.1.xip.io
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    external:
+      name: nginx-proxy-demo
