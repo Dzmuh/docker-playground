@@ -1,5 +1,9 @@
 version: '2'
 
+networks:
+  nginx-proxy-test1:
+    external: false
+
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy
@@ -7,12 +11,14 @@ services:
       - "80:80"
     environment:
       - DEFAULT_HOST=127.0.0.1.xip.io
+    networks:
+      - nginx-proxy-test1
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   nginx0:
     image: nginx
     volumes:
-      - ./nginx0_html:/usr/share/nginx/html
+      - ../www/default:/usr/share/nginx/html
     environment:
       - VIRTUAL_HOST=127.0.0.1.xip.io

@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  nginx1:
+    image: nginx
+    volumes:
+      - ../../www/html1:/usr/share/nginx/html
+    environment:
+      - VIRTUAL_HOST=nginx1.127.0.0.1.xip.io
+    networks:
+      - nginx-proxy-test1

@@ -6,7 +6,7 @@
 
 * [127.0.0.1.xip.io](http://127.0.0.1.xip.io/)
 * [nginx1.127.0.0.1.xip.io](http://nginx1.127.0.0.1.xip.io/)
-* [whoami2.127.0.0.1.xip.io](http://whoami2.127.0.0.1.xip.io/)
+* [nginx2.127.0.0.1.xip.io](http://nginx2.127.0.0.1.xip.io/)
 
 ## Ссылки
 

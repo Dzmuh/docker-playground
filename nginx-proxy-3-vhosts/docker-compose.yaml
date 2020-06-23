@@ -13,20 +13,20 @@ services:
   nginx0:
     image: nginx
     volumes:
-      - ./nginx0_html:/usr/share/nginx/html
+      - ../www/default:/usr/share/nginx/html
     environment:
       - VIRTUAL_HOST=127.0.0.1.xip.io
 
   nginx1:
     image: nginx
     volumes:
-      - ./nginx1_html:/usr/share/nginx/html
+      - ../www/html1:/usr/share/nginx/html
     environment:
       - VIRTUAL_HOST=nginx1.127.0.0.1.xip.io
   
   nginx2:
     image: nginx
     volumes:
-      - ./nginx2_html:/usr/share/nginx/html
+      - ../www/html2:/usr/share/nginx/html
     environment:
       - VIRTUAL_HOST=nginx2.127.0.0.1.xip.io
