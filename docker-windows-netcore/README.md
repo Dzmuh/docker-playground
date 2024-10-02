@@ -1,5 +1,5 @@
 # .NET Core Docker Images
 
-## Links
+## Ссылки
 
 * [.NET Core - Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core)
