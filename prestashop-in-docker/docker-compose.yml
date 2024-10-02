@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - "./.srv/database:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: prestashop
+      MYSQL_DATABASE: my-site
+      MYSQL_USER: prestashop
+      MYSQL_PASSWORD: prestashop
+
+  prestashop:
+    image: prestashop/prestashop:latest
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    ports:
+      - 8000:80
+    restart: always
+    environment:
+      PS_DEMO_MODE: 1
+      DB_SERVER: mysql:3306
+      DB_USER: prestashop
+      DB_PASSWD: prestashop
+      DB_NAME: my-site
+    volumes:
+      - ./.srv/prestashop/:/var/www/html
+      - ./.srv/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+  
+  phpmyadmin:
+    image: phpmyadmin:latest
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    ports:
+      - 8181:80
+    environment:
+      MYSQL_USERNAME: prestashop
+      MYSQL_ROOT_PASSWORD: prestashop
+      PMA_HOST: mysql
