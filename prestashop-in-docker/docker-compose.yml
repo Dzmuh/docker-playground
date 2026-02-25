@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   mysql:
     image: mysql:latest
@@ -29,6 +27,8 @@ services:
       DB_USER: prestashop
       DB_PASSWD: prestashop
       DB_NAME: my-site
+      PS_LANGUAGE: ru
+      PS_COUNTRY: PL
     volumes:
       - ./.srv/prestashop/:/var/www/html
       - ./.srv/custom.ini:/usr/local/etc/php/conf.d/custom.ini
